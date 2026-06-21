@@ -1,126 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
-</head>
+    <title>Student Greeting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
 
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #greeting {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
 
-<div class="container">
+    <div class="container">
+        <h2>Student Greeting System</h2>
 
-    <!-- Personal Profile -->
-    <div class="card profile">
+        <input type="text" id="studentName" placeholder="Enter Student Name">
 
-        <img src="./WhatsApp Image 2026-06-06 at 4.37.51 AM.jpeg" alt="My Photo">
+        <br>
 
-        <h1>Orji Uzoma Ibiam Example</h1>
+        <button onclick="greetStudent()">Greet Student</button>
 
-        <h2>Department of Computer Science</h2>
-
-        <p>
-            My name is Orji Uzoma Ibiam. I am a student of Akanu Ibiam Federal Polytechnic,
-            Unwana. I am passionate about technology, research, project writing,
-            and web development. I enjoy learning new skills and exploring
-            innovative solutions to real-world problems.
-        </p>
-
+        <div id="greeting"></div>
     </div>
 
-    <!-- Hobbies -->
-    <div class="card">
+    <script>
+        function greetStudent() {
+            let name = document.getElementById("studentName").value;
 
-        <h2>My Hobbies</h2>
-
-        <ol>
-            <li>Reading</li>
-            <li>Researching</li>
-            <li>Listening to Music</li>
-            <li>Watching Educational Videos</li>
-            <li>Browsing the Internet</li>
-        </ol>
-
-    </div>
-
-    <!-- Favourite Foods -->
-    <div class="card">
-
-        <h2>Favourite Foods</h2>
-
-        <ul>
-            <li>Jollof Rice</li>
-            <li>Fried Rice</li>
-            <li>Pounded Yam and Egusi Soup</li>
-            <li>Beans and Plantain</li>
-            <li>Chicken and Chips</li>
-        </ul>
-
-    </div>
-
-    <!-- Course Table -->
-    <div class="card">
-
-        <h2>ND II Second Semester Courses</h2>
-
-        <table>
-
-            <tr>
-                <th>Course Title</th>
-                <th>Credit Units</th>
-                <th>Course Lecturer</th>
-            </tr>
-
-            <tr>
-                <td>Web Design</td>
-                <td>4</td>
-                <td>Mr. Noble</td>
-            </tr>
-
-            <tr>
-                <td>file Management and Organization</td>
-                <td>3</td>
-                <td>Dr. Francis Omoeke</td>
-            </tr>
-
-            <tr>
-                <td>Management Information System</td>
-                <td>3</td>
-                <td>Mr. T. A. Oyenrian</td>
-            </tr>
-
-            <tr>
-                <td>Communication in English</td>
-                <td>2</td>
-                <td>Miss Tommy Edem Ekaette</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-    <!-- Hyperlink -->
-    <div class="card">
-
-        <h2>Enquiries</h2>
-
-        <p>
-            Click the button below for enquiries about me:
-        </p>
-
-        <a href="https://portal.polyunwana.edu.ng/"
-           target="_blank"
-           class="btn">
-           Visit School Portal
-        </a>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 My Personal Profile Page</p>
-    </footer>
-
-</div>
+            if (name.trim() === "") {
+                document.getElementById("greeting").innerHTML =
+                    "Please enter a student's name.";
+            } else {
+                document.getElementById("greeting").innerHTML =
+                    "Hello, " + name + "! Welcome to the class.";
+            }
+        }
+    </script>
 
 </body>
 </html>
